@@ -83,16 +83,15 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
-				<groupId>com.vmware.tanzu.springcloudgateway.extensions</groupId>
-				<artifactId>extensions-bom</artifactId>
-				<version>${tanzu-scg-extensions.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+<!--			<dependency>-->
+<!--				<groupId>com.vmware.tanzu.springcloudgateway.extensions</groupId>-->
+<!--				<artifactId>extensions-bom</artifactId>-->
+<!--				<version>${tanzu-scg-extensions.version}</version>-->
+<!--				<type>pom</type>-->
+<!--				<scope>import</scope>-->
+<!--			</dependency>-->
 		</dependencies>
 	</dependencyManagement>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -102,7 +101,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
+				<version>3.14.1</version>
 				<configuration>
 					<annotationProcessorPaths>
 						<path>
@@ -115,5 +114,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>

@@ -27,8 +27,8 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product save(@RequestBody Product produto) {
-        return repository.save(produto);
+    public Product save(@RequestBody Product product) {
+        return repository.save(product);
     }
 
     @PutMapping("/{id}")
