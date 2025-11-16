@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalogo-produtos
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: catalogo-produtos
+  template:
+    metadata:
+      labels:
+        app: catalogo-produtos
+    spec:
+      containers:
+        - name: catalogo-produtos
+          image: <seu-registro>/catalogo-produtos:latest
+          ports:
+            - containerPort: 8090
