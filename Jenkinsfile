@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_REPO     = 'MariaPaulaGementi/product-catalog-api'
         AWS_REGION      = 'us-east-1'
         AWS_ACCOUNT_ID  = '921821545221'
         DOCKER_IMAGE    = 'catalogo-produtos'
@@ -15,15 +14,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout GitHub') {
-            steps {
-                withCredentials([string(credentialsId: 'github-credentials', variable: 'GITHUB_TOKEN')]) {
-                    git branch: 'main',
-                        url: "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git"
-                }
-            }
-        }
-
         stage('Build Package') {
             steps {
                 sh 'mvn clean package -DskipTests'
